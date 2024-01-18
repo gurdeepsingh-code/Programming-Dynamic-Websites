@@ -7,69 +7,118 @@
 </head>
 <body>
 
+    <button onclick="implementAnd()">implementAnd</button>
+    <button onclick="implementOR()">implementOR</button>
+    <button onclick="implementNot()">implementNot</button>
+
     <!-- Button1: -> functionNum -->
+    <input type="button" onclick="functionNum()" value="functionNum" />
+    <br>
     <!-- Button2: -> functionString -->
+    <button onclick="functionString()">functionString</button>
+    <br>
     <!-- Button3: -> functionBoolean -->
+    <button onclick="functionBoolean()">functionBoolean</button>
+    <br>
     <!-- Button4: -> functionArt -->
+    <button onclick="functionArt()">functionArt</button>
 
     <script>
 
-
-        // functionNum() {}
-
-        // create a variable num1 = 100
-        // check if num is greater or equal to 100 -> print true if yes
-        // output num1(num1 Value): true, num1(100): true
-        // take this input from user
-        let num1 = prompt("Enter num1");
-        if(num1 >= 100) {
-            console.log(`num1 (${num1}) if`);
-        } else {
-            console.log(`num2 (${num2}) else`);
+        // change the function with numAnd1, numAnd2, get it from user, and check if numAnd1 = 1 & numAnd2 = 2
+        function implementAnd() {
+            if(true && false) {
+                console.log("AND condition is true");
+            } else {
+                console.log("AND condition is false");
+            }
         }
-        //write false if num1 is less than 100
 
-        // functionString() {}
-
-        // create a variable num2 = "validate"
-        // check if num2 is equal to the same string and print true if yes
-        // output num2(num2 Value): true
-        // take this input from user
-        let num2 = prompt("Enter num2");;
-        if(num2 === "validate") {
-            console.log(`num2 (${num2}) if`);
-        } else {
-            console.log(`num2 (${num2}) else`);
+        function implementOR() {
+            if(true || false) {
+                console.log("Or");
+            } else {
+                console.log("not");
+            }
         }
-        //write false if num2 is not equal to 100
+
+        function implementNot() {
+            if(!false) {
+                console.log("NOT case is true");
+            } else {
+                console.log("not");
+            }
+        }
+
+
+        function functionNum() {
+            // create a variable num1 = 100
+            // check if num is greater or equal to 100 -> print true if yes
+            // output num1(num1 Value): true, num1(100): true
+            // take this input from user
+            let num1 = prompt("Enter num1");
+            if(num1 <= 100 ) {
+                if(num1 == 50) {
+                    console.log(`num1 is ${num1}`);
+                } else {
+                    console.log(`num1 is not 50, but it's something less than or equal to 100`);
+                }
+                console.log(`num1 (${num1}) if`);
+            } else {
+                console.log(`num2 (${num2}) else`);
+            }
+            //write false if num1 is less than 100
+        }
 
         
-        // functionBoolean() {}
-        // create a variable num3 = true (boolean)
-        // check if num3 is valid condition or not, if yes, print true 
-        // output num3(num3 Value): true
-        // take this input from user
-        let num3 = prompt("Enter num3");;
-        if(num3 == true) {
-            console.log(`num3 (${num3}) if`);
-        } else {
-            console.log(`num3 (${num3}) else`);
+
+        function functionString() {
+            // create a variable num2 = "validate"
+            // check if num2 is equal to the same string and print true if yes
+            // output num2(num2 Value): true
+            // take this input from user
+            let num2 = prompt("Enter num2");;
+            if(num2 === "validate") {
+                console.log(`num2 (${num2}) if`);
+            } else {
+                console.log(`num2 (${num2}) else`);
+            }
+            //write false if num2 is not equal to 100
         }
-        //write false if num3 is either not boolean of it's false
 
         
-        // functionArt() {}
-        // create a variable num4 = assign any value;
-        // check if it's a mod of 2, if yes, print true
-        // output num4(num4 Value): true
-        // take this input from user
-        let num4 = prompt("Enter num4");;
-        if(num4 % 2 === 0) {
-            console.log(`num4 (${num4}) if`);
-        } else {
-            console.log(`num4 (${num4}) else`);
+
+        
+        function functionBoolean() {
+            // create a variable num3 = true (boolean)
+            // check if num3 is valid condition or not, if yes, print true 
+            // output num3(num3 Value): true
+            // take this input from user
+            let num3 = prompt("Enter num3");;
+            if(num3 == true) {
+                console.log(`num3 (${num3}) if`);
+            } else {
+                console.log(`num3 (${num3}) else`);
+            }
+            //write false if num3 is either not boolean of it's false
         }
-        //write false if num4 is not a mod of 2
+        
+
+        
+        function functionArt() {
+            // create a variable num4 = assign any value;
+            // check if it's a mod of 2, if yes, print true
+            // output num4(num4 Value): true
+            // take this input from user
+            let num4 = prompt("Enter num4");;
+            if(num4 % 2 === 0) {
+                console.log(`num4 (${num4}) if`);
+            } else {
+                console.log(`num4 (${num4}) else`);
+            }
+            //write false if num4 is not a mod of 2
+        }
+        
 
     </script>
 </body>
