@@ -6,6 +6,38 @@
     <title>Week 3-a</title>
 </head>
 <body>
-    
+    Output: <div id="output"></div>
+    <br>
+
+    <button onclick="MathFunctions()">Math Functions</button>
+
+    <button onclick="OnClick()">OnClick</button>
+    <button onclick="OnMouseEnter()">OnMouseEnter</button>
+    <button onclick="OnMouseLeave()">OnMouseLeave</button>
+
+
+
+    <script>
+        let output = document.getElementById("output");
+
+
+        function MathFunctions() {
+            let userData = parseFloat(prompt("Enter a float number"));
+
+            output.innerHTML += "Math.round" + Math.round(userData) + "<br>";
+            output.innerHTML += "Math.floor" + Math.floor(userData) + "<br>";
+            output.innerHTML += "Math.ceil" + Math.ceil(userData) + "<br>";
+        }
+
+        function OnClick() {
+            output.innerHTML += "Button Clicked!";
+        }
+        function OnMouseEnter() {
+            output.innerHTML += "Mouse entered";
+        }
+        function OnMouseLeave() {
+            output.innerHTML += "Mouse left";
+        }
+    </script>
 </body>
 </html>
