@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Forms</title>
+</head>
+<body>
+
+    <!-- Create me a employee  -->
+    
+    <div style="text-align: center">
+        <h1>Review</h1>
+
+        <form name="myForm" method="post" action="mailto:test@email.com?Whatever&cc=test2@email.com" enctype="text/plain">
+
+            <input type="hidden" name="token" value="fafasfhsofasfnasjhfajsh" />
+
+            <fieldset>
+                <legend>Login Details</legend>
+                <label for="username">Username</label>
+                <input id="username" type="text" value="" name="username" placeholder="Enter your username"/>
+    
+                <br> <br>
+    
+                <label for="password">Password</label>
+                <input type="password" value="" id="password" name="password" placeholder="Enter your password"/>
+            </fieldset>
+
+            <br> <br>
+
+            <fieldset>
+                <legend>School</legend>
+                <label for="rememberPasswordRadio">Conestoga Student?</label>
+                <br>
+                YES <input type="radio" id="rememberPasswordRadio" name="rememberPasswordRadio" value="Yes" />
+                No <input type="radio" id="rememberPasswordRadio"  name="rememberPasswordRadio" value="No"  checked/>
+            </fieldset>
+
+            <fieldset>
+                <legend>Courses</legend>
+
+                <select name="courses" multiple>
+                    <option value="CompProg">Computer Programming</option>
+                    <option value="WebDesign" selected>Web Designing</option>
+                    <option value="ITInf">IT Infrastructure</option>
+                </select>
+            </fieldset>
+    
+            
+            <br> <br>
+
+            <fieldset>
+                <legend>Reviews</legend>
+                <label for="comments">Comments</label>
+                <textarea name="comments" id="comments" value="" rows="5" cols="20" placeholder="Enter your comments"></textarea>
+            </fieldset>
+
+            
+            <br> <br>
+    
+            <input type="submit" name="submitButton" value="Submit" />
+            <input type="reset" name="resetButton" value="Reset" />
+        </form>
+    </div>
+
+
+</body>
+</html>
