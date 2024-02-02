@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Boolean Conversion</title>
+    <script>
+        function begin() {
+            var one = 0; // Corrected the variable declaration
+            var two = 1; // Corrected the variable declaration
+            var three = 11; // Corrected the variable declaration and added semicolon
+            var four = NaN; // Corrected the variable declaration and added semicolon
+            
+            // Creating Boolean objects
+            var bool1 = new Boolean(one);
+            var bool2 = new Boolean(two);
+            var bool3 = new Boolean(three);
+            var bool4 = new Boolean(four); // Corrected the variable name
+
+            // Displaying results
+            document.getElementById('1').innerHTML = (one + " results in Boolean " + bool1);
+            document.getElementById('2').innerHTML = (two + " results in Boolean " + bool2);
+            document.getElementById('3').innerHTML = (three + " results in Boolean " + bool3);
+            document.getElementById('4').innerHTML = (four + " results in Boolean " + bool4); // Corrected the variable name
+        }
+    </script>
+</head>
+<body>
+    <input type="button" onclick="begin()" value="Check Boolean values">
+    <div id="1">&nbsp;</div>
+    <h3><span id="2">&nbsp;</span></h3>
+    <h3><span id="3">&nbsp;</span></h3>
+    <h3><span id="4">&nbsp;</span></h3>
+</body>
+</html>
