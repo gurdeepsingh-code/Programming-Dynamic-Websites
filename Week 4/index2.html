@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // Example using *
+        const regexWithStar = /a*b/; // Matches zero or more 'a' followed by 'b'
+        const testStringsStar = ["b", "ab", "aab", "aaaabbb", "bbbbbb", "", "a", "aa", "ba", "aabbb"];
+        testStringsStar.forEach(str => {
+            console.log(`String "${str}" matches regex with *:`, regexWithStar.test(str));
+        });
+
+        // Example using +
+        const regexWithPlus = /a+b/; // Matches one or more 'a' followed by 'b'
+        const testStringsPlus = ["ab", "aab", "aaaabbb", "bbbbbb", "a", "aa"];
+        testStringsPlus.forEach(str => {
+            console.log(`String "${str}" matches regex with +:`, regexWithPlus.test(str));
+        });
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
