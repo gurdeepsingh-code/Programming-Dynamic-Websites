@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script>
+        let arr = [1,2,10,3,4,5,6,7];
+        let array2 = [4,5,6];
+        let arrayString = [
+            "ali",
+            "john",
+            "mark"
+        ];
+
+        console.log("concat",array.concat(array2));
+        console.log("join",array.join(array2));
+        console.log("pushed value", array.push(7));
+        console.log("new array", array);
+        console.log("reverse ", array.reverse());
+        console.log("shift", array.shift());
+        console.log("new array", array);
+        console.log("sort", array.sort());
+        console.log("string sort", arrayString.sort())
+        console.log("Splice", array.splice(1,3));
+        console.log("new array", array);
+        console.log("toString", array.toString());
+        console.log("unshift", array.unshift(7423942));
+        console.log("new array", array);
+
+
+        // ask the user for number of people present in a room?
+        let input = Number(prompt("Enter number of students"));
+        // create an empty array: names
+        let names = [];
+        let scores = [];
+        // based on the number entered by user: create a loop
+        // add name of people present in a room in names array
+        for(let i = 0; i<input; i++) {
+            names[i] = prompt("Enter student name at index " + i);
+            // assign score to the student that user entered at the same index
+            scores[i] = Number(prompt("Enter the score for: " + names[i]));
+        }
+        // use different loop than for to print this on the console 
+        // Student with name "Gurdeep Singh" scored 23 marks.
+        names.forEach( (name, index) => {
+            console.log(`Student with the name ${name} scored ${scores[index]}`);
+        })
+
+        let array = [];
+        array[0] = [1,2,3];
+        array[1] = [4,5,6];
+        array[2] = [7,8,9]
+
+        console.log(array);
+        console.log(typeof array[0]);
+        console.log(array[1][2]);
+
+
+        let json = {
+            "names": ["a", "b", "c"],
+            "images": ["path1", "path2", "path3"],
+            "usernames": ["username1", "username2", "username3"]
+        }
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
