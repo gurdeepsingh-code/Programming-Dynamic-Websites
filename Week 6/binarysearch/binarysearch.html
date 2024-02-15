@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Binary Search</title>
+<script>
+let names = ["Alice", "Bob", "Charlie", "David", "Emma", "Frank", "Grace", "Henry", "Ivy", "Jack", "Kelly", "Liam", "Mia", "Noah", "Olivia", "Peter", "Quinn", "Ryan", "Sophia", "Tyler"];
+let emails = ["alice@example.com", "bob@example.com", "charlie@example.com", "david@example.com", "emma@example.com", "frank@example.com", "grace@example.com", "henry@example.com", "ivy@example.com", "jack@example.com", "kelly@example.com", "liam@example.com", "mia@example.com", "noah@example.com", "olivia@example.com", "peter@example.com", "quinn@example.com", "ryan@example.com", "sophia@example.com", "tyler@example.com"];
+let GPAs = [3.8, 3.5, 3.9, 3.2, 3.7, 3.6, 4.0, 3.4, 3.9, 3.3, 3.8, 3.6, 3.9, 3.7, 3.5, 3.2, 3.6, 3.9, 3.8, 3.7];
+
+function binarySearch() {
+    let low = 0;
+    let N = names.length;
+    let high = N - 1;
+    let found = false;
+    let key = prompt("Who are you looking for?");
+    let resultContainer = document.getElementById('result');
+
+    while (low <= high) {
+        let mid = Math.floor((low + high) / 2);
+        if (key === names[mid]) {
+            found = true;
+            resultContainer.innerHTML = "Student: " + names[mid] + "<br>" + "Email: " + emails[mid] + "<br>" + "GPA: " + GPAs[mid];
+            break;
+        } else if (key < names[mid]) {
+            high = mid - 1;
+        } else {
+            low = mid + 1;
+        }
+    }
+
+    if (!found) {
+        resultContainer.innerHTML = "Student record not found.";
+    }
+}
+</script>
+</head>
+<body>
+<div id="container" style="width: 700px;">
+<h2>Binary Search</h2>
+<p><button onclick="binarySearch()">Search</button></p>
+<div id="result"></div>
+</div>
+</body>
+</html>
