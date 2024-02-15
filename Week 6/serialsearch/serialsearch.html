@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort Array</title>
+    <script>
+    function srchColor() {
+        let colors = new Array("blue", "green", "yellow", "red", "orange", "purple", "black", "white", "*");
+        let index = 0;
+        let found = 0;
+        let searchKey = prompt("What color shirt do you want?");
+        
+        while ((found == 0) && (colors[index] != "*")) {
+            if (colors[index] == searchKey) {
+                found = 1;
+                index++;
+            } else {
+                index++;
+            }
+        }
+        
+        if (found == 1) {
+            document.getElementById('result').innerHTML = (colors[index-1] + " is available. Your " + colors[index-1] + " shirt will be ordered.");
+        } else {
+            document.getElementById('result').innerHTML = ("Shirt not available in " + searchKey + ".");
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="container" style="width: 700px; ">
+    <h2>What color do you want?</h2>
+    <p><input type="button" value="Start" onclick="srchColor();" /></p>
+    <h3 id="result">&nbsp;</h3>
+    </div>
+</body>
+</html>
+    
