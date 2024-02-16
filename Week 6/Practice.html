@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function generateOddArray() {
+            let oddValues = [];
+            for (let i = 345; i <= 2027; i++) {
+                if (i % 2 !== 0) {
+                    oddValues.push(i);
+                }
+            }
+            return oddValues;
+        }
+
+        // Linear search algorithm
+        function linearSearch(arr, target) {
+            let iterations = 0;
+            for (let i = 0; i < arr.length; i++) {
+                iterations++;
+                if (arr[i] === target) {
+                    return iterations;
+                }
+            }
+            return iterations; // If the target is not found
+        }
+
+        // Binary search algorithm
+        function binarySearch(arr, target) {
+            let iterations = 0;
+            let left = 0;
+            let right = arr.length - 1;
+            while (left <= right) {
+                iterations++;
+                let mid = Math.floor((left + right) / 2);
+                if (arr[mid] === target) {
+                    return iterations;
+                } else if (arr[mid] < target) {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
+            }
+            return iterations; // If the target is not found
+        }
+
+        // Call the function to generate the array
+        let oddArray = generateOddArray();
+
+        // Perform linear search and count iterations
+        let linearIterations = linearSearch(oddArray, 2027);
+
+        // Perform binary search and count iterations
+        let binaryIterations = binarySearch(oddArray, 2027);
+
+        // Print the number of iterations for each search
+        console.log("Number of iterations for linear search:", linearIterations);
+        console.log("Number of iterations for binary search:", binaryIterations);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
