@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Input Values</title>
+</head>
+<body>
+    <form id="myForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br><br>
+        
+        <button type="button" onclick="getFormValues()">Submit</button>
+    </form>
+
+    <script>
+        function getFormValues() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            console.log("Username: " + username);
+            console.log("Password: " + password);
+            
+            // Do something with the values, like sending them to a server via AJAX or processing them further
+        }
+    </script>
+</body>
+</html>

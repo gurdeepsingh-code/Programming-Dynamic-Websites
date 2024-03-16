@@ -1,0 +1,22 @@
+<%- include('shared/htmlstart') -%>
+
+<div id='header'><h1>Bloom</h1></div> 
+
+<% if(showNav == true) { %>
+    <%- include('shared/nav') -%>
+<% } %>
+
+<hr> 
+
+<h3>Contact Page</h3> 
+<% if(contactDetail) { %>
+<a href="tel:"><%= contactDetail.contact %></a>
+<a href="mailto:"><%= contactDetail.email %></a>
+<% } %>
+
+<hr> 
+
+<div id='footer'>bloom@conestogac.on.ca</div>
+
+
+<%- include('shared/htmlend') -%>
