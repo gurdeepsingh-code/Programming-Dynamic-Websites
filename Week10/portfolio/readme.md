@@ -25,16 +25,16 @@ Hosted on localhost:8080
 2. Footer with contactdetails
 
 
-## Main Page: http://localhost:4200/
+## Main Page: http://localhost:8080/
 Loads up the main page
 
-## Education: http://localhost:4200/education
+## Education: http://localhost:8080/education
 Loads up the Education
 
-## Experience: http://localhost:4200/experience
+## Experience: http://localhost:8080/experience
 Loads up the Experience
 
-## Contact: http://localhost:4200/contact
+## Contact: http://localhost:8080/contact
 Loads up the Contact us page
 
 
