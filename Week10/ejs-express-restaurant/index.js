@@ -1,7 +1,9 @@
 const express = require('express');
+const {check, validationResult} = require('express-validator')
 const path = require('path');
 
 const expressApp = express();
+expressApp.use(express.urlencoded({extended:false}));
 
 expressApp.set("views", path.join(__dirname, "views"));
 expressApp.use(express.static("public"));
@@ -17,8 +19,22 @@ expressApp.get("/about", (req, res) => {
 });
 expressApp.get("/contact", (req, res) => {
     // send a boolean to showNav 
-    res.render("contact", { contactDetail: {contact: 9876543210, email: "bloom@conestogac.on.ca"}, showNav: true })
+    res.render("contact")
 });
+
+expressApp.post("/contact", [
+    check("username", "Name should exists").notEmpty(),
+    check("email", "email should exist").notEmpty().isEmail()
+], (req,res) => {
+    const error = validationResult(req);
+    if(!error.isEmpty()){
+        res.render("contact", {errors: error.array()});
+    } else {
+        res.render("thanks");
+    }
+    console.log(req.body)
+})
+
 expressApp.get("/menu", (req, res) => {
     // send a boolean to showNav 
     res.render("menu", {showNav: false})
