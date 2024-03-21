@@ -1,0 +1,42 @@
+<%- include('shared/htmlstart') -%>
+
+<div id='header'><h1>Bloom</h1></div> 
+
+<% if(typeof(showNav) !== 'undefined') { %>
+    <%- include('shared/nav') -%>
+<% } %>
+
+<hr> 
+
+<h3>Contact Page</h3> 
+<% if(typeof(contactDetail) !== 'undefined') { %>
+<a href="tel:"><%= contactDetail.contact %></a>
+<a href="mailto:"><%= contactDetail.email %></a>
+<% } %>
+
+<hr> 
+
+<form action="/contactForm" method="post">
+    <input type="text" name="username" placeholder="Username" />
+    <br>
+    <input type="email" name="email" placeholder="Email" />
+    <br>
+    <textarea name="message" placeholder="Message"></textarea>
+    <br>
+    <input type="number" name="age" placeholder="Age" />
+    <br>
+    <input type="submit" name="submit" value="submit">
+</form>
+
+<% if(typeof(errors) !== 'undefined') {
+    for(var error of errors) {
+        %>
+            <p><%= error.msg %></p>
+        <%
+    }
+} %>
+
+<div id='footer'>bloom@conestogac.on.ca</div>
+
+
+<%- include('shared/htmlend') -%>
