@@ -12,7 +12,7 @@ mongoose.connect("mongodb://localhost:27017/bloom", {
 });
 
 // mongoDB Table
-const contactDetail = mongoose.model("contact", {
+const ContactDetail = mongoose.model("contact", {
     column1: String,
     column2: String,
     column3: String,
@@ -20,9 +20,16 @@ const contactDetail = mongoose.model("contact", {
 });
 
 // mongoDB model for login
-// handle /login get routing
-// handle /loginForm post routing
-// save the login credentials of login
+const Login = mongoose.model("login", {
+    username_field: String,
+    password_field: String
+})
+
+// mongoDB model for login
+const Signup = mongoose.model("signup", {
+    username_field: String,
+    password_field: String
+})
 
 expressApp.use(express.urlencoded({extended:false}));
 
@@ -52,7 +59,7 @@ expressApp.post("/contactForm", [
     if(errors.isEmpty()) {
         console.log(req.body);
 
-        let mongooseDBObj = new contactDetail({
+        let mongooseDBObj = new ContactDetail({
             column1: req.body.username,
             column2: req.body.email,
             column3: req.body.message,
@@ -72,6 +79,37 @@ expressApp.get("/menu", (req, res) => {
     // send a boolean to showNav 
     res.render("menu", {showNav: false})
 });
+
+// handle /login get routing
+expressApp.get("/login", (req,res) => {
+    res.render("login");
+})
+// handle /loginForm post routing\
+expressApp.post("/loginForm", async (req,res) => {
+    let user = await Signup.findOne({username_field: req.body.username}).exec();
+    if(user) {
+        console.log("user", user)
+    } else {
+        console.log("error")
+    }
+})
+// save the login credentials of login
+
+expressApp.get("/signup", (req,res) => {
+    res.render("signup");
+})
+// handle /loginForm post routing\
+expressApp.post("/signupForm", (req,res) => {
+    let signupObj = new Signup({
+        username_field: req.body.username,
+        password_field: req.body.password
+    });
+
+    signupObj.save().then( () => {
+        console.log("Signup data is being saved");
+    }) 
+})
+// save the login credentials of login
 
 let port = 4200;
 expressApp.listen(port);
